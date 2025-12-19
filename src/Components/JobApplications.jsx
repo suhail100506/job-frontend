@@ -15,7 +15,7 @@ const JobApplications = () => {
         try {
             setLoading(true);
             const token = localStorage.getItem('token');
-            const response = await axios.get('http://localhost:5000/api/applications/my-applications', {
+            const response = await axios.get('https://job-portal-backend-gcjw.onrender.com/api/applications/my-applications', {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }

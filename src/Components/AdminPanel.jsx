@@ -19,12 +19,12 @@ const AdminPanel = () => {
             const token = localStorage.getItem('token');
 
             if (activeTab === 'users') {
-                const response = await axios.get('http://localhost:5000/api/users', {
+                const response = await axios.get('https://job-portal-backend-gcjw.onrender.com/api/users', {
                     headers: { 'Authorization': `Bearer ${token}` }
                 });
                 setUsers(response.data);
             } else {
-                const response = await axios.get('http://localhost:5000/api/jobs', {
+                const response = await axios.get('https://job-portal-backend-gcjw.onrender.com/api/jobs', {
                     headers: { 'Authorization': `Bearer ${token}` }
                 });
                 setJobs(response.data);
@@ -43,7 +43,7 @@ const AdminPanel = () => {
 
         try {
             const token = localStorage.getItem('token');
-            await axios.delete(`http://localhost:5000/api/users/${userId}`, {
+            await axios.delete(`https://job-portal-backend-gcjw.onrender.com/api/users/${userId}`, {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
             setUsers(users.filter(u => u._id !== userId));
@@ -58,7 +58,7 @@ const AdminPanel = () => {
 
         try {
             const token = localStorage.getItem('token');
-            await axios.delete(`http://localhost:5000/api/jobs/${jobId}`, {
+            await axios.delete(`https://job-portal-backend-gcjw.onrender.com/api/jobs/${jobId}`, {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
             setJobs(jobs.filter(j => j._id !== jobId));
@@ -72,7 +72,7 @@ const AdminPanel = () => {
         try {
             const token = localStorage.getItem('token');
             await axios.put(
-                `http://localhost:5000/api/users/${userId}/role`,
+                `https://job-portal-backend-gcjw.onrender.com/api/users/${userId}/role`,
                 { role: newRole },
                 { headers: { 'Authorization': `Bearer ${token}` } }
             );

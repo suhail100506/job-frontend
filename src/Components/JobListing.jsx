@@ -10,14 +10,14 @@ const JobListing = () => {
     useEffect(() => { fetchJobs(); }, []);
 
     const fetchJobs = async () => {
-        try { setLoading(true); const { data } = await axios.get('http://localhost:5000/api/jobs'); setJobs(data); }
+        try { setLoading(true); const { data } = await axios.get('https://job-portal-backend-gcjw.onrender.com/api/jobs'); setJobs(data); }
         catch (err) { console.error(err); } finally { setLoading(false); }
     };
 
     const handleSearch = async (e) => {
         e.preventDefault();
         const params = new URLSearchParams(Object.entries(filters).filter(([_, v]) => v));
-        try { const { data } = await axios.get(`http://localhost:5000/api/jobs/search?${params}`); setJobs(data); }
+        try { const { data } = await axios.get(`https://job-portal-backend-gcjw.onrender.com/api/jobs/search?${params}`); setJobs(data); }
         catch (err) { console.error(err); }
     };
 

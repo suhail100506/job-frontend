@@ -25,13 +25,13 @@ const RecruiterHome = () => {
             setLoading(true);
             const token = localStorage.getItem('token');
 
-            const jobsResponse = await axios.get('http://localhost:5000/api/jobs', {
+            const jobsResponse = await axios.get('https://job-portal-backend-gcjw.onrender.com/api/jobs', {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
 
             const myJobs = jobsResponse.data.filter(job => job.postedBy._id === user._id);
 
-            const applicationsResponse = await axios.get('http://localhost:5000/api/applications', {
+            const applicationsResponse = await axios.get('https://job-portal-backend-gcjw.onrender.com/api/applications', {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
 

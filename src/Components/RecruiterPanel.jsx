@@ -27,14 +27,14 @@ const RecruiterPanel = () => {
             setLoading(true);
             const token = localStorage.getItem('token');
 
-            const jobsResponse = await axios.get('http://localhost:5000/api/jobs', {
+            const jobsResponse = await axios.get('https://job-portal-backend-gcjw.onrender.com/api/jobs', {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
 
             const myJobs = jobsResponse.data.filter(job => job.postedBy._id === user._id);
             setJobs(myJobs);
 
-            const applicationsResponse = await axios.get('http://localhost:5000/api/applications', {
+            const applicationsResponse = await axios.get('https://job-portal-backend-gcjw.onrender.com/api/applications', {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
             setApplications(applicationsResponse.data);
@@ -61,7 +61,7 @@ const RecruiterPanel = () => {
 
         try {
             const token = localStorage.getItem('token');
-            await axios.delete(`http://localhost:5000/api/jobs/${jobId}`, {
+            await axios.delete(`https://job-portal-backend-gcjw.onrender.com/api/jobs/${jobId}`, {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
             setJobs(jobs.filter(j => j._id !== jobId));
@@ -76,7 +76,7 @@ const RecruiterPanel = () => {
         try {
             const token = localStorage.getItem('token');
             await axios.put(
-                `http://localhost:5000/api/applications/${applicationId}/status`,
+                `https://job-portal-backend-gcjw.onrender.com/api/applications/${applicationId}/status`,
                 { status: newStatus },
                 { headers: { 'Authorization': `Bearer ${token}` } }
             );

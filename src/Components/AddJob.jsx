@@ -29,7 +29,7 @@ const AddJob = () => {
             setLoading(true);
             setError('');
             const token = localStorage.getItem('token');
-            await axios.post('http://localhost:5000/api/jobs', formData, {
+            await axios.post('https://job-portal-backend-gcjw.onrender.com/api/jobs', formData, {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }

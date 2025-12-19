@@ -18,13 +18,13 @@ const JobApplicationsManage = () => {
             setLoading(true);
             const token = localStorage.getItem('token');
 
-            const jobResponse = await axios.get(`http://localhost:5000/api/jobs/${jobId}`, {
+            const jobResponse = await axios.get(`https://job-portal-backend-gcjw.onrender.com/api/jobs/${jobId}`, {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
             setJob(jobResponse.data);
 
 
-            const appsResponse = await axios.get(`http://localhost:5000/api/applications/job/${jobId}`, {
+            const appsResponse = await axios.get(`https://job-portal-backend-gcjw.onrender.com/api/applications/job/${jobId}`, {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
             setApplications(appsResponse.data);
@@ -41,7 +41,7 @@ const JobApplicationsManage = () => {
         try {
             const token = localStorage.getItem('token');
             await axios.put(
-                `http://localhost:5000/api/applications/${applicationId}/status`,
+                `https://job-portal-backend-gcjw.onrender.com/api/applications/${applicationId}/status`,
                 { status: newStatus },
                 { headers: { 'Authorization': `Bearer ${token}` } }
             );
@@ -141,7 +141,7 @@ const JobApplicationsManage = () => {
                                     {application.resume && (
                                         <div className="mb-4">
                                             <a
-                                                href={`http://localhost:5000/${application.resume}`}
+                                                href={`https://job-portal-backend-gcjw.onrender.com/${application.resume}`}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 className="text-blue-600 hover:underline"
