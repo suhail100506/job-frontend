@@ -50,9 +50,12 @@ export const AuthProvider = ({ children }) => {
             setUser(user);
             return { success: true, user };
         } catch (error) {
+            const errorMessage = error.response?.data?.message ||
+                error.response?.data?.errors?.[0]?.msg ||
+                'Login failed';
             return {
                 success: false,
-                message: error.response?.data?.message || 'Login failed'
+                message: errorMessage
             };
         }
     };
@@ -66,9 +69,12 @@ export const AuthProvider = ({ children }) => {
             setUser(user);
             return { success: true };
         } catch (error) {
+            const errorMessage = error.response?.data?.message ||
+                error.response?.data?.errors?.[0]?.msg ||
+                'Registration failed';
             return {
                 success: false,
-                message: error.response?.data?.message || 'Registration failed'
+                message: errorMessage
             };
         }
     };
