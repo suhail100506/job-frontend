@@ -16,49 +16,50 @@ const Navbar = () => {
     }
 
     return (
-        <nav className="bg-white shadow-md">
+        <nav className="bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 shadow-xl sticky top-0 z-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-16">
-                    <Link to="/" className="text-xl font-bold text-blue-600">
-                        Job Portal
+                    <Link to="/" className="flex items-center space-x-2">
+                        <span className="text-2xl">💼</span>
+                        <span className="text-xl font-bold text-white">Elite Jobs</span>
                     </Link>
                     <ul className="flex items-center space-x-6">
                         <li>
-                            <Link to="/" className="text-gray-700 hover:text-blue-600">Home</Link>
+                            <Link to="/" className="text-white hover:text-gray-200 transition font-medium">Home</Link>
                         </li>
                         <li>
-                            <Link to="/jobs" className="text-gray-700 hover:text-blue-600">Jobs</Link>
+                            <Link to="/jobs" className="text-white hover:text-gray-200 transition font-medium">Jobs</Link>
                         </li>
                         {user ? (
                             <>
                                 <li>
-                                    <Link to="/dashboard" className="text-gray-700 hover:text-blue-600">Dashboard</Link>
+                                    <Link to="/dashboard" className="text-white hover:text-gray-200 transition font-medium">Dashboard</Link>
                                 </li>
                                 {(user.role === 'recruiter' || user.role === 'admin') && (
                                     <>
                                         <li>
-                                            <Link to="/recruiter" className="text-gray-700 hover:text-blue-600">Recruiter Panel</Link>
+                                            <Link to="/recruiter" className="text-white hover:text-gray-200 transition font-medium">Recruiter</Link>
                                         </li>
                                         <li>
-                                            <Link to="/add-job" className="text-gray-700 hover:text-blue-600">Post Job</Link>
+                                            <Link to="/add-job" className="bg-white text-indigo-600 px-4 py-2 rounded-lg hover:bg-gray-100 transition font-semibold">+ Post Job</Link>
                                         </li>
                                     </>
                                 )}
                                 {user.role === 'admin' && (
                                     <li>
-                                        <Link to="/admin" className="text-gray-700 hover:text-blue-600">Admin Panel</Link>
+                                        <Link to="/admin" className="text-white hover:text-gray-200 transition font-medium">Admin</Link>
                                     </li>
                                 )}
                                 {user.role === 'jobseeker' && (
                                     <li>
-                                        <Link to="/my-applications" className="text-gray-700 hover:text-blue-600">My Applications</Link>
+                                        <Link to="/my-applications" className="text-white hover:text-gray-200 transition font-medium">Applications</Link>
                                     </li>
                                 )}
                                 <li>
-                                    <span className="text-gray-600 text-sm">Hi, {user.name}</span>
+                                    <span className="text-white bg-white/20 px-3 py-1 rounded-full text-sm">👋 {user.name}</span>
                                 </li>
                                 <li>
-                                    <button onClick={handleLogout} className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700">
+                                    <button onClick={handleLogout} className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition font-semibold">
                                         Logout
                                     </button>
                                 </li>
@@ -66,10 +67,10 @@ const Navbar = () => {
                         ) : (
                             <>
                                 <li>
-                                    <Link to="/login" className="text-gray-700 hover:text-blue-600">Login</Link>
+                                    <Link to="/login" className="text-white hover:text-gray-200 transition font-medium">Login</Link>
                                 </li>
                                 <li>
-                                    <Link to="/register" className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Register</Link>
+                                    <Link to="/register" className="bg-white text-indigo-600 px-6 py-2 rounded-lg hover:bg-gray-100 transition font-semibold">Register</Link>
                                 </li>
                             </>
                         )}

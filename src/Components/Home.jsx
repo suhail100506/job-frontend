@@ -6,37 +6,41 @@ const Home = () => {
     const { user } = useAuth();
 
     return (
-        <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
-            <section className="container mx-auto px-4 py-20">
-                <div className="text-center max-w-4xl mx-auto">
-                    <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-                        Find Your Dream Job Today
+        <div className="min-h-screen bg-gradient-to-b from-indigo-50 via-purple-50 to-white">
+            <section className="container mx-auto px-4 py-24">
+                <div className="text-center max-w-5xl mx-auto">
+                    <div className="inline-block bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-6 py-2 rounded-full text-sm font-semibold mb-6 shadow-lg">
+                        🎉 Welcome to Elite Jobs Platform
+                    </div>
+                    <h1 className="text-6xl md:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 mb-6 leading-tight">
+                        Find Your Dream Career
                     </h1>
-                    <p className="text-xl text-gray-600 mb-10">
-                        Discover thousands of job opportunities with all the information you need.
-                        Connect with top companies and take the next step in your career.
+                    <p className="text-xl md:text-2xl text-gray-600 mb-10 leading-relaxed">
+                        🚀 Discover thousands of opportunities with elite companies. 
+                        <br className="hidden md:block" />
+                        Connect with top employers and elevate your career journey.
                     </p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <div className="flex flex-col sm:flex-row gap-6 justify-center">
                         {user ? (
                             <Link
                                 to="/jobs"
-                                className="bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition"
+                                className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-10 py-4 rounded-xl text-lg font-bold hover:shadow-2xl transition transform hover:scale-105"
                             >
-                                Browse Jobs
+                                🔍 Browse Elite Jobs
                             </Link>
                         ) : (
                             <>
                                 <Link
                                     to="/register"
-                                    className="bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition"
+                                    className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-10 py-4 rounded-xl text-lg font-bold hover:shadow-2xl transition transform hover:scale-105"
                                 >
-                                    Get Started
+                                    ✨ Get Started Free
                                 </Link>
                                 <Link
                                     to="/login"
-                                    className="bg-white text-blue-600 border-2 border-blue-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-50 transition"
+                                    className="bg-white text-indigo-600 border-2 border-indigo-600 px-10 py-4 rounded-xl text-lg font-bold hover:bg-indigo-50 transition transform hover:scale-105 shadow-lg"
                                 >
-                                    Login
+                                    🔑 Sign In
                                 </Link>
                             </>
                         )}
@@ -44,75 +48,75 @@ const Home = () => {
                 </div>
             </section>
 
-            <section className="container mx-auto px-4 py-16">
-                <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
-                    Why Choose Our Platform?
+            <section className="container mx-auto px-4 py-20">
+                <h2 className="text-4xl md:text-5xl font-bold text-center text-gray-900 mb-16">
+                    🏆 Why Choose Elite Jobs?
                 </h2>
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div className="bg-white p-6 rounded-lg shadow-md text-center">
-                        <div className="text-5xl mb-4">🎯</div>
-                        <h3 className="text-xl font-semibold mb-3">Easy Job Search</h3>
-                        <p className="text-gray-600">
-                            Find jobs that match your skills and interests quickly and easily with our advanced search filters.
+                    <div className="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition transform hover:-translate-y-2 border border-gray-100">
+                        <div className="text-6xl mb-4">🎯</div>
+                        <h3 className="text-2xl font-bold mb-4 text-gray-800">Smart Search</h3>
+                        <p className="text-gray-600 leading-relaxed">
+                            AI-powered job matching to find perfect opportunities tailored to your skills.
                         </p>
                     </div>
-                    <div className="bg-white p-6 rounded-lg shadow-md text-center">
-                        <div className="text-5xl mb-4">💼</div>
-                        <h3 className="text-xl font-semibold mb-3">Top Companies</h3>
-                        <p className="text-gray-600">
-                            Connect with leading employers and innovative startups across various industries.
+                    <div className="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition transform hover:-translate-y-2 border border-gray-100">
+                        <div className="text-6xl mb-4">💼</div>
+                        <h3 className="text-2xl font-bold mb-4 text-gray-800">Top Companies</h3>
+                        <p className="text-gray-600 leading-relaxed">
+                            Access exclusive opportunities from Fortune 500 companies and innovative startups.
                         </p>
                     </div>
-                    <div className="bg-white p-6 rounded-lg shadow-md text-center">
-                        <div className="text-5xl mb-4">📈</div>
-                        <h3 className="text-xl font-semibold mb-3">Career Growth</h3>
-                        <p className="text-gray-600">
-                            Access opportunities that help you advance your professional career to the next level.
+                    <div className="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition transform hover:-translate-y-2 border border-gray-100">
+                        <div className="text-6xl mb-4">📈</div>
+                        <h3 className="text-2xl font-bold mb-4 text-gray-800">Career Growth</h3>
+                        <p className="text-gray-600 leading-relaxed">
+                            Fast-track your professional development with roles that accelerate your success.
                         </p>
                     </div>
-                    <div className="bg-white p-6 rounded-lg shadow-md text-center">
-                        <div className="text-5xl mb-4">🔔</div>
-                        <h3 className="text-xl font-semibold mb-3">Job Alerts</h3>
-                        <p className="text-gray-600">
-                            Get notified about new job postings that match your profile and preferences.
+                    <div className="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition transform hover:-translate-y-2 border border-gray-100">
+                        <div className="text-6xl mb-4">⚡</div>
+                        <h3 className="text-2xl font-bold mb-4 text-gray-800">Instant Alerts</h3>
+                        <p className="text-gray-600 leading-relaxed">
+                            Real-time notifications for new jobs matching your profile and preferences.
                         </p>
                     </div>
                 </div>
             </section>
 
-            <section className="bg-blue-600 text-white py-16">
+            <section className="bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 text-white py-20 my-16 rounded-3xl mx-4 shadow-2xl">
                 <div className="container mx-auto px-4">
-                    <div className="grid md:grid-cols-3 gap-8 text-center">
-                        <div>
-                            <div className="text-4xl font-bold mb-2">10,000+</div>
-                            <div className="text-blue-100">Active Jobs</div>
+                    <div className="grid md:grid-cols-3 gap-12 text-center">
+                        <div className="transform hover:scale-110 transition">
+                            <div className="text-5xl font-extrabold mb-3">10,000+</div>
+                            <div className="text-xl text-indigo-100">💼 Active Jobs</div>
                         </div>
-                        <div>
-                            <div className="text-4xl font-bold mb-2">5,000+</div>
-                            <div className="text-blue-100">Companies</div>
+                        <div className="transform hover:scale-110 transition">
+                            <div className="text-5xl font-extrabold mb-3">5,000+</div>
+                            <div className="text-xl text-indigo-100">🏢 Elite Companies</div>
                         </div>
-                        <div>
-                            <div className="text-4xl font-bold mb-2">50,000+</div>
-                            <div className="text-blue-100">Happy Candidates</div>
+                        <div className="transform hover:scale-110 transition">
+                            <div className="text-5xl font-extrabold mb-3">50,000+</div>
+                            <div className="text-xl text-indigo-100">🎉 Success Stories</div>
                         </div>
                     </div>
                 </div>
             </section>
 
 
-            <section className="container mx-auto px-4 py-20 text-center">
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                    Ready to Get Started?
+            <section className="container mx-auto px-4 py-24 text-center">
+                <h2 className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600 mb-6">
+                    Ready to Transform Your Career?
                 </h2>
-                <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
-                    Join thousands of job seekers and employers today. Create your free account and start your journey!
+                <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
+                    Join elite professionals worldwide. Create your free account and unlock exclusive opportunities today!
                 </p>
                 {!user && (
                     <Link
                         to="/register"
-                        className="inline-block bg-blue-600 text-white px-10 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition"
+                        className="inline-block bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-12 py-5 rounded-xl text-xl font-bold hover:shadow-2xl transition transform hover:scale-105"
                     >
-                        Create Free Account
+                        🚀 Start Your Journey Free
                     </Link>
                 )}
             </section>
